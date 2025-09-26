@@ -1,10 +1,10 @@
 
-# Challenge 1: Intro To Commands
+# Challenge 1: Intro to Commands
 
 In this challenge, you will invoke your first command!
 When you type a command and hit enter, the command will be invoked, as so:
 
-```console
+```sh
 hacker@dojo:~$ whoami
 hacker
 hacker@dojo:~$
@@ -18,7 +18,7 @@ Keep in mind: commands in Linux are case sensitive: `hello` is different from `H
 
 ## Solution:
 
-After the terminal comes up, the user needs to invoke the `hello` command, which prints the flag
+After the terminal comes up, the user needs to invoke the `hello` command, which prints the flag.
 
 #### Commands run: 
 
@@ -37,7 +37,7 @@ pwn.college{4W0jWHmZXg2zH1H9h0QPT03RWEg.QX3YjM1wSOxAzNzEzW}
 - The `$` at the end of the prompt signifies that hacker is not an administrative user.
 - commands in Linux are case sensitive: hello is different from HELLO.
 
-# Challenge 2: Intro To Arguments
+# Challenge 2: Intro to Arguments
 
 Let's try something more complicated: a command with _arguments_, which is what we call additional data passed to the command.
 When you type a line of text and hit enter, the shell actually parses your input into a command and its _arguments_.
@@ -69,7 +69,7 @@ Try it now!
 
 ## Solution:
 
-After the terminal comes up, the user needs to invoke `hello` command with argument `hackers`
+After the terminal comes up, the user needs to invoke `hello` command with argument `hackers`.
 
 #### Commands run: 
 
@@ -101,7 +101,7 @@ In other challenges, the history will contain the log of the commands you've run
 
 ## Solution:
 
-Here the flag is already in our command history (immediate previous command)
+Here the flag is already in our command history (immediate previous command).
 
 #### Commands run:
 
