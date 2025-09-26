@@ -261,7 +261,7 @@ $ ./run
 pwn.college{EBVBZMk0jTLi0yhN1brAArtWh8D.QXxUTN0wSOxAzNzEzW}
 ```
 
-# Challenge 9: 
+# Challenge 9: home sweet home
 
 Every user has a _home directory_, typically under `/home` in the filesystem.
 In the dojo, you are the `hacker` user, and your home directory is `/home/hacker`.
