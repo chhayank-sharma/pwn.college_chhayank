@@ -159,7 +159,8 @@ After the terminal comes up, the user needs to use the `man` command to get the 
 
 ```sh
 $ man challenge
-
+```
+```
 CHALLENGE(1)                                                                       Challenge Commands                                                                      CHALLENGE(1)
 
 NAME
@@ -191,7 +192,8 @@ SEE ALSO
 
 pwn.college                                                                             May 2024                                                                           CHALLENGE(1)
  Manual page challenge(1) line 1/31 (END) (press h for help or q to quit)
-
+```
+```sh
  $ /challenge/challenge --tlzfjl 033
 ```
 
@@ -254,7 +256,8 @@ $ man man
 $ man -k challenge
 sbrskoteuf (1)       - print the flag!
 $ man sbrskoteuf
-
+```
+```
 CHALLENGE(1)                                                                       Challenge Commands                                                                      CHALLENGE(1)
 
 NAME
@@ -286,7 +289,8 @@ SEE ALSO
 
 pwn.college                                                                             May 2024                                                                           CHALLENGE(1)
  Manual page sbrskoteuf(1) line 1/31 (END) (press h for help or q to quit)
-
+```
+```sh
 $ /challenge/challenge --sbrsko 020
 ```
 
