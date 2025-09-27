@@ -101,7 +101,7 @@ In other challenges, the history will contain the log of the commands you've run
 
 ## Solution:
 
-Here the flag is already in our command history (immediate previous command).
+Here the flag is already in our command history (immediate previous command). After the terminal comes up, the user needs to press the `up arrow` to capture it.
 
 #### Commands run:
 
