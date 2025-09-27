@@ -70,7 +70,7 @@ You can read it with `cat` at its absolute path: `/flag`.
 
 ## Solution:
 
-Here, the flag has been written to a file in our home directory. After the terminal comes up, the user needs to use the cat command to capture it.
+Here, the flag has been written to a file in our root directory. After the terminal comes up, the user needs to use the cat command to capture it.
 
 #### Commands run: 
 
@@ -92,16 +92,14 @@ You must retrieve the flag by absolute path, wherever it is.
 
 ## Solution:
 
+After the terminal comes up, the following will be printed:
 ```
 You cannot use the 'cd' command in this level, and must retrieve the flag by 
 absolute path. Plus, I hid the flag in a different directory! You can find it 
 in the file /lib/gcc/x86_64-linux-gnu/flag. Go cat it out **without** cding 
 into that directory!
 ```
-
-After the terminal comes up, the user needs to 
-
-#TODO complete this
+The user needs to use the `cat` command to print the flag using its absolute path instead of its relative path.
 
 #### Commands run: 
 
