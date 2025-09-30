@@ -269,7 +269,7 @@ Now try it for yourself! `/challenge/run` will output a hundred thousand lines o
 
 ## Solution:
 
-After the terminal comes up, the user needs to 
+After the terminal comes up, the user needs to use the pipe operator(`|`) to pass the output of `/challenge/run` into `grep` and search for the flag which will start with `pwn.college`. This should cause the flag to be printed to the screen.
 
 #### Commands run: 
 
