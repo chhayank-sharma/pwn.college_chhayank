@@ -61,16 +61,27 @@ As you climb the path, a guardian emerges, its form shifting between the visage 
 ## Solution:
 
 This challenge is acompanied with an apk file. When you install the apk, an app with the title `DEXterity Quest` will be added to the device.
+
 ![AppIcon.jpeg](Shinsu_DEXquest/0AppIcon.jpeg)
+
 On running the app, you will be greeted by the following `home screen`:
+
 ![HomeScreen.jpeg](Shinsu_DEXquest/1HomeScreen.jpeg)
+
 If you swipe left, you will see the `observer` screen:
+
 ![Observer.jpeg](Shinsu_DEXquest/2Observer.jpeg)
+
 If you choose to `observe the obseverver`, you will find the `sealed observer`:
+
 ![SealedObserver.jpeg](Shinsu_DEXquest/3SealedObserver.jpeg)
+
 Here, you will need to enter a code to obtain the `shinsu stabiliser crystal`, but thats for later. If you instead swiped right from the `home screen`, you would find the `shinsu barrier`:
+
 ![ShinsuBarrier.jpeg](Shinsu_DEXquest/4ShinsuBarrier.jpeg)
+
 If you choose to `enter the barrier` without a `shinsu stabiliser crystal`, you will be `deepfried` and the app will quit:
+
 ![DeepFried.jpeg](Shinsu_DEXquest/5DeepFried.jpeg)
 
 To actually capture the flag, we must find the code required to unlock the `sealed observer` and get the `shinsu stabiliser crystal`. To this, I used `JADX` to reverse engineer the apk. After abit of looking around, I was able to find the `correctDigits` function. This function is responsible for checking if the code is valid or not.
@@ -395,9 +406,13 @@ private final int correctDigits(String input) {
 For the correct code, the value of the `green` variable must be 99 by the end. Using this, I was able to find the code:
 `246451121036528202623890120011222498714684815355211850969748918921930947358058258074789422723982625`
 Now, if we enter this in the `sealed observer` page, we will obtain the `shinsu stabiliser crystal`:
+
 ![CodeEntered.jpeg](Shinsu_DEXquest/6CodeEntered.jpeg)
+
 Now, if we try to pass through the barrier, we will be taken to the `flag` page where the flag can be captured.
+
 ![FlagPage.jpeg](Shinsu_DEXquest/7FlagPage.jpeg)
+
 ![FlagCaptured.jpeg](Shinsu_DEXquest/8FlagCaptured.jpeg)
 
 ## Flag: 
