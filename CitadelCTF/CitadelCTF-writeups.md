@@ -1,4 +1,26 @@
 
+# Challenge: schlagenheim
+
+Your quest continues, but you feel something odd about this room. The only artifact on this floor is a corrupted file held in the hands of a jet-black statue, frozen in the pose of a band *mid*-performance. The passcode to the next floor is hidden within this piece of music, but it can’t be played, as if the wrong extension has scrambled it.
+
+You must take the corrupted file and repair it to reveal the true code that will unlock the door forward.
+
+[mymusic.wav](schlagenheim/mymusic.wav)
+
+## Solution:
+
+In this challenge, we have been given a ".wav" file but if we try to play it, we will see that the file seems to be corrupted. If we inspect the file with a hex editor, we can see that the file header starts with `M1D1`. On doing some research, we will also notice that the file really does seem to be a MIDI file and to fix it we must change the header to `MThd` (and maybe change the file extension to make it more clear). Then, if we view the new midi file in a software like audacity, we can see the flag spelled out inside the file:
+
+[mymusic.midi](schlagenheim/mymusic.midi)
+
+![midi.png](schlagenheim/midi.png)
+
+## Flag: 
+
+```
+citadel{8lackM1D1wa5c00l}
+```
+
 # Challenge: The Ripper
 
 The guardian of this floor steps from the shadows. Known only as Jack the Ripper, he watches you carefully. He proclaims himself merciful and hands you a word list to help.
