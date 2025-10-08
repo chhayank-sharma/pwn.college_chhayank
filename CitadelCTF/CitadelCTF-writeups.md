@@ -4,16 +4,16 @@
 The guardian of this floor steps from the shadows. Known only as Jack the Ripper, he watches you carefully. He proclaims himself merciful and hands you a word list to help.
 He asks you to find the passcode hidden in this hash `$2a$04$RNoyoWAcW0StwSri4YN1Eeb2j1gBNKutDOMxsLzfyfSvB/ghMHToa`. The word list is your only aid. Only by combining the two correctly can you uncover the key and move on to the next floor. Flag format: `citadel{password}`
 
-[hash.txt](CitadelCTF/The_Ripper/hash.txt)
-[wordlist.txt](CitadelCTF/The_Ripper/wordlist.txt)
+[hash.txt](The_Ripper/hash.txt)
+[wordlist.txt](The_Ripper/wordlist.txt)
 
 ## Solution:
 
 On analysing the hash with any tool, we can see that it is a bcrypt hash. Since we  have been given a list of possible passwords, we can bruteforce this using a python script.
 
-![letitrip.png](CitadelCTF/The_Ripper/letitrip.png)
+![letitrip.png](The_Ripper/letitrip.png)
 
-[abra.py](CitadelCTF/The_Ripper/abra.py)
+[abra.py](The_Ripper/abra.py)
 
 ## Flag: 
 
@@ -27,7 +27,7 @@ A clear chime rolls through the chamber and a new crest ignites on your badge �
 
 Near the gate to the next floor you come across a CAPTCHA verification test, but it has been covered by scratches on the decaying wall and misleading letters stopping you from finding the correct key, all to prove you’re human.
 
-![BRATCHA.jpg](CitadelCTF/BRATCHA/BRATCHA.jpg)
+![BRATCHA.jpg](BRATCHA/BRATCHA.jpg)
 
 ## Solution:
 
@@ -41,10 +41,10 @@ $ while read line; do firefox --new-tab "$line"; done < list.txt
 
 Then, I just kept pressing `Ctrl+W` till I found the right page.
 
-![pastebin.png](CitadelCTF/BRATCHA/pastebin.png)
+![pastebin.png](BRATCHA/pastebin.png)
 
-[listall.py](CitadelCTF/BRATCHA/listall.py)
-[list.txt](CitadelCTF/BRATCHA/link.txt)
+[listall.py](BRATCHA/listall.py)
+[list.txt](BRATCHA/link.txt)
 
 ## Flag: 
 
@@ -56,22 +56,22 @@ citadel{1m_3v3rywh3r3_1m_s0_jul1a}
 
 As you climb the path, a guardian emerges, its form shifting between the visage of a long-dead climber and a metallic sentinel. It moves with a strange grace, holding out a cartridge containing a single file. You realize the file is compatible with the device you carry and may be the key to continue your ascent toward the Citadel’s heart.
 
-[dexquest.apk](CitadelCTF/Shinsu_DEXquest/dexquest.apk)
+[dexquest.apk](Shinsu_DEXquest/dexquest.apk)
 
 ## Solution:
 
 This challenge is acompanied with an apk file. When you install the apk, an app with the title `DEXterity Quest` will be added to the device.
-![AppIcon.jpeg](CitadelCTF/Shinsu_DEXquest/0AppIcon.jpeg)
+![AppIcon.jpeg](Shinsu_DEXquest/0AppIcon.jpeg)
 On running the app, you will be greeted by the following `home screen`:
-![HomeScreen.jpeg](CitadelCTF/Shinsu_DEXquest/1HomeScreen.jpeg)
+![HomeScreen.jpeg](Shinsu_DEXquest/1HomeScreen.jpeg)
 If you swipe left, you will see the `observer` screen:
-![Observer.jpeg](CitadelCTF/Shinsu_DEXquest/2Observer.jpeg)
+![Observer.jpeg](Shinsu_DEXquest/2Observer.jpeg)
 If you choose to `observe the obseverver`, you will find the `sealed observer`:
-![SealedObserver.jpeg](CitadelCTF/Shinsu_DEXquest/3SealedObserver.jpeg)
+![SealedObserver.jpeg](Shinsu_DEXquest/3SealedObserver.jpeg)
 Here, you will need to enter a code to obtain the `shinsu stabiliser crystal`, but thats for later. If you instead swiped right from the `home screen`, you would find the `shinsu barrier`:
-![ShinsuBarrier.jpeg](CitadelCTF/Shinsu_DEXquest/4ShinsuBarrier.jpeg)
+![ShinsuBarrier.jpeg](Shinsu_DEXquest/4ShinsuBarrier.jpeg)
 If you choose to `enter the barrier` without a `shinsu stabiliser crystal`, you will be `deepfried` and the app will quit:
-![DeepFried.jpeg](CitadelCTF/Shinsu_DEXquest/5DeepFried.jpeg)
+![DeepFried.jpeg](Shinsu_DEXquest/5DeepFried.jpeg)
 
 To actually capture the flag, we must find the code required to unlock the `sealed observer` and get the `shinsu stabiliser crystal`. To this, I used `JADX` to reverse engineer the apk. After abit of looking around, I was able to find the `correctDigits` function. This function is responsible for checking if the code is valid or not.
 
@@ -395,10 +395,10 @@ private final int correctDigits(String input) {
 For the correct code, the value of the `green` variable must be 99 by the end. Using this, I was able to find the code:
 `246451121036528202623890120011222498714684815355211850969748918921930947358058258074789422723982625`
 Now, if we enter this in the `sealed observer` page, we will obtain the `shinsu stabiliser crystal`:
-![CodeEntered.jpeg](CitadelCTF/Shinsu_DEXquest/6CodeEntered.jpeg)
+![CodeEntered.jpeg](Shinsu_DEXquest/6CodeEntered.jpeg)
 Now, if we try to pass through the barrier, we will be taken to the `flag` page where the flag can be captured.
-![FlagPage.jpeg](CitadelCTF/Shinsu_DEXquest/7FlagPage.jpeg)
-![FlagCaptured.jpeg](CitadelCTF/Shinsu_DEXquest/8FlagCaptured.jpeg)
+![FlagPage.jpeg](Shinsu_DEXquest/7FlagPage.jpeg)
+![FlagCaptured.jpeg](Shinsu_DEXquest/8FlagCaptured.jpeg)
 
 ## Flag: 
 
