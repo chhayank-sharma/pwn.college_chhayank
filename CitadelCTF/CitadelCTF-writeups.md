@@ -74,6 +74,33 @@ Then, I just kept pressing `Ctrl+W` till I found the right page.
 citadel{1m_3v3rywh3r3_1m_s0_jul1a}
 ```
 
+# Challenge: A Memory's a Heavy Burden
+
+You now find yourself in the place where many climbers have been laid to rest. A cold wind moves through the *temple* grounds, carrying whispers of the departed. Stone lanterns and marble graves reflect *Buddhist* traditions, their shadows stretching across the frost-covered earth.
+
+The temple rests in the shadow of a very *iconic mountain*, quiet and imposing. Every detail in the image, the arrangement of the graves, the lanterns, and the lingering scent of incense, holds clues to its true location. You need to uncover the exact coordinates of where you are to move on from here.
+
+Note: round off coordinates to 3 decimal places.
+
+Flag format: citadel{XX.XXX_XXX.XXX}
+
+## Solution:
+
+We have been given an image and have been tasked with finding the coordinates of the location in the picture. If we reverse image search it, we can find a reddit post where the answer is given in literally the first comment. From there, we can get the flag.
+
+![Reddit.png](Shinsu_DEXquest/Reddit.png)
+
+![GoogleEarth.png](Shinsu_DEXquest/GoogleEarth.png)
+
+*(sorry Indrath for cheesing the challenge. hopefully you mannaged to find and ban the person who posted the question on reddit)*
+
+## Flag: 
+
+```
+citadel{35.486_138.699}
+```
+
+
 # Challenge: Shinsu DEXquest
 
 As you climb the path, a guardian emerges, its form shifting between the visage of a long-dead climber and a metallic sentinel. It moves with a strange grace, holding out a cartridge containing a single file. You realize the file is compatible with the device you carry and may be the key to continue your ascent toward the Citadel’s heart.
