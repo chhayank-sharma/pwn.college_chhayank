@@ -88,9 +88,9 @@ Flag format: citadel{XX.XXX_XXX.XXX}
 
 We have been given an image and have been tasked with finding the coordinates of the location in the picture. If we reverse image search it, we can find a reddit post where the answer is given in literally the first comment. From there, we can get the flag.
 
-![Reddit.png](Shinsu_DEXquest/Reddit.png)
+![Reddit.png](A_Memory_is_a_Heavy_Burden/Reddit.png)
 
-![GoogleEarth.png](Shinsu_DEXquest/GoogleEarth.png)
+![GoogleEarth.png](A_Memory_is_a_Heavy_Burden/GoogleEarth.png)
 
 *(sorry Indrath for cheesing the challenge. hopefully you mannaged to find and ban the person who posted the question on reddit)*
 
