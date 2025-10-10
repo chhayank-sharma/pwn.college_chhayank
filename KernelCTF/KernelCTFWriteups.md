@@ -23,7 +23,7 @@ ctf{th3_h1dd3n_k4t}kernel
 
 ### References:
 
-- [Forensically](https://29a.ch/photo-forensics/
+- [Forensically](https://29a.ch/photo-forensics/)
 - [CyberChef](https://gchq.github.io/CyberChef/)
 
 
