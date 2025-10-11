@@ -10,7 +10,7 @@ This is not typically used to elevate to `root` access anymore, but it is an ele
 
 `su` is a setuid binary:
 
-```console
+```sh
 hacker@dojo:~$ ls -l /usr/bin/su
 -rwsr-xr-x 1 root root 232416 Dec 1 11:45 /usr/bin/su
 hacker@dojo:~$
@@ -20,7 +20,7 @@ Because it has the SUID bit set, `su` runs as `root`.
 Running as `root`, it can start a `root` shell!
 Of course, `su` is discerning: before allowing the user to elevate privileges to `root`, it checks to make sure that the user knows the `root` password:
 
-```console
+```sh
 hacker@dojo:~$ su
 Password: 
 su: Authentication failure
@@ -69,7 +69,7 @@ With no arguments, `su` will start a `root` shell (after authenticating with `ro
 However, you can also give a username as an argument to switch to _that_ user instead of `root`.
 For example:
 
-```console
+```sh
 hacker@dojo:~$ su some-user
 Password:
 some-user@dojo:~$
@@ -115,7 +115,7 @@ When you enter a password for `su`, it compares it against the stored password f
 These passwords _used_ to be stored in `/etc/passwd`, but because `/etc/passwd` is a globally-readable file, this is not good for passwords, these were moved to `/etc/shadow`.
 Here is the example `/etc/shadow` from the previous level:
 
-```console
+```sh
 root:$6$s74oZg/4.RnUvwo2$hRmCHZ9rxX56BbjnXcxa0MdOsW2moiW8qcAl/Aoc7NEuXl2DmJXPi3gLp7hmyloQvRhjXJ.wjqJ7PprVKLDtg/:19921:0:99999:7:::
 daemon:*:19873:0:99999:7:::
 bin:*:19873:0:99999:7:::
@@ -160,7 +160,7 @@ For example, backups are often stored, unencrypted and insufficiently protected,
 If a hacker gets their hands on a leaked `/etc/shadow`, they can start cracking passwords and wreaking havoc.
 The cracking can be done via the famous [John the Ripper](https://www.openwall.com/john/), as so:
 
-```console
+```sh
 hacker@dojo:~$ john ./my-leaked-shadow-file
 Loaded 1 password hash (crypt, generic crypt(3) [?/64])
 Will run 32 OpenMP threads
@@ -217,7 +217,7 @@ To address this, in recent decades, the world has moved from administration via 
 
 Unlike `su`, which defaults to launching a shell as a specified user, `sudo` defaults to running a command as `root`:
 
-```console
+```sh
 hacker@dojo:~$ whoami
 hacker
 hacker@dojo:~$ sudo whoami
@@ -227,7 +227,7 @@ hacker@dojo:~$
 
 Or, more relevant to getting flags:
 
-```console
+```sh
 hacker@dojo:~$ grep hacker /etc/shadow
 grep: /etc/shadow: Permission denied
 hacker@dojo:~$ sudo grep hacker /etc/shadow
