@@ -5,7 +5,7 @@ The easiest way to chain commands is `;`.
 In most contexts, `;` separates commands in a similar way to how Enter separates lines.
 So, this:
 
-```console
+```sh
 hacker@dojo:~$ echo COLLEGE > pwn
 hacker@dojo:~$ cat pwn
 COLLEGE
@@ -14,7 +14,7 @@ hacker@dojo:~$
 
 Is roughly the same as this:
 
-```console
+```sh
 hacker@dojo:~$ echo COLLEGE > pwn; cat pwn
 COLLEGE
 hacker@dojo:~$
@@ -51,7 +51,7 @@ This is called the "AND" operator because both conditions must be true: the firs
 That's super useful for complex commandline workflows where certain actions depend on the success of other actions.
 
 Here's the syntax:
-```console
+```sh
 hacker@dojo:~$ command1 && command2
 ```
 
@@ -59,7 +59,7 @@ This means: "Run command1, and IF it succeeds, then run command2."
 
 Some examples:
 
-```console
+```sh
 hacker@dojo:~$ touch /home/hacker/file && echo "this will run"
 success
 this will run
@@ -97,14 +97,14 @@ Now let's learn about its opposite: the `||` operator allows you to run a second
 This is called the "OR" operator because either the first command succeeds OR the second command will run.
 
 Here's the syntax:
-```console
+```sh
 hacker@dojo:~$ command1 || command2
 ```
 
 This means: "Run command1, and IF it fails, then run command2."
 
 Some examples:
-```console
+```sh
 hacker@dojo:~$ touch /file || echo "touch failed, so this runs"
 touch: cannot touch '/file': Permission denied
 touch failed, so this runs
@@ -139,7 +139,7 @@ As you combine more and more commands to achieve complex effects, the length of 
 When this happens, you can put these commands in a file, called a _shell script_, and run them by executing the file!
 For example, consider our semicolon technique:
 
-```console
+```sh
 hacker@dojo:~$ echo COLLEGE > pwn; cat pwn
 COLLEGE
 hacker@dojo:~$
@@ -155,7 +155,7 @@ cat pwn
 And then we can execute by passing it as an argument to a new instance of our shell (`bash`)!
 When a shell is invoked like this, rather than taking commands from the user, it reads commands from the file.
 
-```console
+```sh
 hacker@dojo:~$ ls
 hacker@dojo:~$ bash pwn.sh
 COLLEGE
@@ -206,7 +206,7 @@ As far as the shell is concerned, your script is just another command.
 That means you can redirect its input and output just like you did for commands in the [Piping](/linux-luminarium/piping) module!
 For example, you can write it to a file:
 
-```console
+```sh
 hacker@dojo:~$ cat script.sh
 echo PWN
 echo COLLEGE
@@ -300,7 +300,7 @@ echo "Hello Hackers!"
 
 This can be executed as:
 
-```console
+```sh
 hacker@dojo:~$ chmod a+x script.sh
 hacker@dojo:~$ ./script.sh
 Hello Hackers!
@@ -355,7 +355,7 @@ You've learned how to make shell scripts, but so far they've just been lists of 
 Scripts become much more powerful when they can accept arguments!
 This might look like:
 
-```console
+```sh
 hacker@dojo:~$ bash myscript.sh hello world
 ```
 
@@ -382,7 +382,7 @@ For this challenge, you need to write a script at `/home/hacker/solve.sh` that:
 2. Outputs them in REVERSE order (second argument first, then the first argument)
 
 For example:
-```console
+```sh
 hacker@dojo:~$ bash /home/hacker/solve.sh pwn college
 college pwn
 hacker@dojo:~$
@@ -449,7 +449,7 @@ For this challenge, write a script at `/home/hacker/solve.sh` that:
 
 Example:
 
-```console
+```sh
 hacker@dojo:~$ bash /home/hacker/solve.sh pwn
 college
 hacker@dojo:~$ bash /home/hacker/solve.sh foo
@@ -538,7 +538,7 @@ For this challenge, write a script at `/home/hacker/solve.sh` that:
 
 Example:
 
-```console
+```sh
 hacker@dojo:~$ bash /home/hacker/solve.sh pwn
 college
 hacker@dojo:~$ bash /home/hacker/solve.sh hack
@@ -623,7 +623,7 @@ For this challenge, write a script at `/home/hacker/solve.sh` that:
 
 Example:
 
-```console
+```sh
 hacker@dojo:~$ bash /home/hacker/solve.sh hack
 the planet
 hacker@dojo:~$ bash /home/hacker/solve.sh pwn
