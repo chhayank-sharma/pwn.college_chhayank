@@ -410,6 +410,8 @@ Then press `Ctrl+X`, Press `Y` when it asks if you want to save the modified buf
 ```sh
 $ chmod +x solve.sh
 $ ./solve.sh string1 string2
+string2 string1
+
 $ /challenge/run
 ```
 
@@ -462,7 +464,7 @@ Read all about it with `help test`!
 
 ## Solution:
 
-In this challenge, we must make a shell script `solve.sh` in our home directory that takes one argument `$1` and then prints our `"college"` if it is equal to `"pwn"`. Then, must make it executable using `chmod` so that it can be run without invoking `bash`. If we have done everything correctly, then running `/challenge/run` will print the flag to the terminal.
+In this challenge, we must make a shell script `solve.sh` in our home directory that takes one argument `$1` and then prints out `"college"` if it is equal to `"pwn"`. Then, must make it executable using `chmod` so that it can be run without invoking `bash`. If we have done everything correctly, then running `/challenge/run` will print the flag to the terminal.
 
 #### Commands run: 
 
@@ -483,7 +485,10 @@ Then press `Ctrl+X`, Press `Y` when it asks if you want to save the modified buf
 ```sh
 $ chmod +x solve.sh
 $ ./solve.sh pwn
+college
+
 $ ./solve.sh abc
+
 $ /challenge/run
 ```
 
@@ -493,24 +498,95 @@ $ /challenge/run
 pwn.college{gu08draGIW7KrV_phsin7M5JZ4w.0lNzMDOxwSOxAzNzEzW}
 ```
 
-# Challenge 10: 
+# Challenge 10: Scripting with Default Cases
 
+Your `if` statements so far have handled specific cases, but what about everything else?
+That's where `else` comes in!
 
+The `else` clause executes when the `if` condition is false:
+
+```bash
+if [ "$1" == "hello" ]
+then
+    echo "Hi there!"
+else
+    echo "I don't understand"
+fi
+```
+
+Note that the `else` doesn't have a condition --- it catches everything that didn't match previously.
+It also doesn't have a `then` statement.
+Finally, the `fi` goes after the `else` block to denote the end of the whole complex statement!
+It is also optional: you didn't have it in the previous level, and you only need it if the logic you're trying to achieve demands it.
+
+Here's a practical example:
+
+```bash
+if [ "$1" == "start" ]
+then
+    echo "Starting the service..."
+else
+    echo "Unknown command. Use 'start' to begin."
+fi
+```
+
+For this challenge, write a script at `/home/hacker/solve.sh` that:
+
+- Takes one argument
+- If the argument is "pwn", output "college"
+- For any other input, output "nope"
+
+Example:
+
+```console
+hacker@dojo:~$ bash /home/hacker/solve.sh pwn
+college
+hacker@dojo:~$ bash /home/hacker/solve.sh hack
+nope
+hacker@dojo:~$ bash /home/hacker/solve.sh anything
+nope
+hacker@dojo:~$
+```
+
+Once your script works correctly, run `/challenge/run` to get your flag!
 
 ## Solution:
 
-
+In this challenge, we must make a shell script `solve.sh` in our home directory that takes one argument `$1` and then prints out `"college"` if it is equal to `"pwn"`, otherwisem prints out `"nope"`. Then, must make it executable using `chmod` so that it can be run without invoking `bash`. If we have done everything correctly, then running `/challenge/run` will print the flag to the terminal.
 
 #### Commands run: 
 
 ```sh
-$ 
+$ nano solve.sh
+```
+
+Enter the script:
+```sh
+#!/bin/bash
+if [ "$1" == "pwn" ]
+then
+    echo "college"
+else
+    echo "nope"
+fi
+```
+Then press `Ctrl+X`, Press `Y` when it asks if you want to save the modified buffer, And hit `Enter`.
+
+```sh
+$ chmod +x solve.sh
+$ ./solve.sh pwn
+college
+
+$ ./solve.sh abc
+nope
+
+$ /challenge/run
 ```
 
 ## Flag: 
 
 ```
-pwn.college{}
+pwn.college{UjNXXT6W8VFZ1TjtgEG7htZb2xC.01NzMDOxwSOxAzNzEzW}
 ```
 
 # Challenge 11: 
