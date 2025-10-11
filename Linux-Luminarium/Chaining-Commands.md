@@ -323,7 +323,7 @@ Common shebangs you might see:
 
 ## Solution:
 
-In this challenge, we must make a shell script `solve.sh` in our home directory. The script must start with a proper shebang such as `#!/bin/bash` and must print `"hack the pllanet"`. Then, must make it executable using `chmod` so that it can be run without invoking `bash`. If we have done everything correctly, then running `/challenge/run` will print the flag to the terminal.
+In this challenge, we must make a shell script `solve.sh` in our home directory. The script must start with a proper shebang such as `#!/bin/bash` and must print `"hack the pllanet"`. Then, we must make it executable using `chmod` so that it can be run without invoking `bash`. If we have done everything correctly, then running `/challenge/run` will print the flag to the terminal.
 
 #### Commands run: 
 
@@ -392,7 +392,7 @@ Once your script works correctly, run `/challenge/run` to get your flag!
 
 ## Solution:
 
-In this challenge, we must make a shell script `solve.sh` in our home directory that takes two arguments `$1` and `$2` and then prints them in reverse order. Then, must make it executable using `chmod` so that it can be run without invoking `bash`. If we have done everything correctly, then running `/challenge/run` will print the flag to the terminal.
+In this challenge, we must make a shell script `solve.sh` in our home directory that takes two arguments `$1` and `$2` and then prints them in reverse order. Then, we must make it executable using `chmod` so that it can be run without invoking `bash`. If we have done everything correctly, then running `/challenge/run` will print the flag to the terminal.
 
 #### Commands run: 
 
@@ -464,7 +464,7 @@ Read all about it with `help test`!
 
 ## Solution:
 
-In this challenge, we must make a shell script `solve.sh` in our home directory that takes one argument `$1` and then prints out `"college"` if it is equal to `"pwn"`. Then, must make it executable using `chmod` so that it can be run without invoking `bash`. If we have done everything correctly, then running `/challenge/run` will print the flag to the terminal.
+In this challenge, we must make a shell script `solve.sh` in our home directory that takes one argument `$1` and then prints out `"college"` if it is equal to `"pwn"`. Then, we must make it executable using `chmod` so that it can be run without invoking `bash`. If we have done everything correctly, then running `/challenge/run` will print the flag to the terminal.
 
 #### Commands run: 
 
@@ -552,7 +552,7 @@ Once your script works correctly, run `/challenge/run` to get your flag!
 
 ## Solution:
 
-In this challenge, we must make a shell script `solve.sh` in our home directory that takes one argument `$1` and then prints out `"college"` if it is equal to `"pwn"`, otherwisem prints out `"nope"`. Then, must make it executable using `chmod` so that it can be run without invoking `bash`. If we have done everything correctly, then running `/challenge/run` will print the flag to the terminal.
+In this challenge, we must make a shell script `solve.sh` in our home directory that takes one argument `$1` and then prints out `"college"` if it is equal to `"pwn"`, otherwise prints out `"nope"`. Then, we must make it executable using `chmod` so that it can be run without invoking `bash`. If we have done everything correctly, then running `/challenge/run` will print the flag to the terminal.
 
 #### Commands run: 
 
@@ -589,24 +589,101 @@ $ /challenge/run
 pwn.college{UjNXXT6W8VFZ1TjtgEG7htZb2xC.01NzMDOxwSOxAzNzEzW}
 ```
 
-# Challenge 11: 
+# Challenge 11: Scripting with Multiple Conditions
 
+You've learned how to use a single `if` statement to check a condition.
+But what if you need to check multiple conditions?
+You can use `elif` (short for `else if`):
 
+```bash
+if [ "$1" == "one" ]
+then
+    echo "1"
+elif [ "$1" == "two" ]
+then
+    echo "2"
+elif [ "$1" == "three" ]
+then
+    echo "3"
+else
+    echo "unknown"
+fi
+```
+
+Note that you _do_ need a `then` after the elif, just like the `if`.
+As before the `else` at the end catches everything that didn't match.
+
+For this challenge, write a script at `/home/hacker/solve.sh` that:
+
+- Takes one argument
+- If the argument is "hack", output "the planet"
+- If the argument is "pwn", output "college"  
+- If the argument is "learn", output "linux"
+- For any other input, output "unknown"
+
+Example:
+
+```console
+hacker@dojo:~$ bash /home/hacker/solve.sh hack
+the planet
+hacker@dojo:~$ bash /home/hacker/solve.sh pwn
+college
+hacker@dojo:~$ bash /home/hacker/solve.sh learn
+linux
+hacker@dojo:~$ bash /home/hacker/solve.sh foo
+unknown
+hacker@dojo:~$
+```
+
+Once your script works correctly, run `/challenge/run` to get your flag!
+
+----
+**NOTE:**
+As you're creating your script, make sure to follow the spacing closely in the examples.
+Unlike many other languages, bash requires the `[` and the `]` to be separated from other characters by spaces, otherwise it cannot parse the condition.
 
 ## Solution:
 
-
+In this challenge, we must make a shell script `solve.sh` in our home directory that takes one argument `$1` and then:
+- If the argument is "hack", output "the planet"
+- If the argument is "pwn", output "college"  
+- If the argument is "learn", output "linux"
+- For any other input, output "unknown"
+Then, we must make it executable using `chmod` so that it can be run without invoking `bash`. If we have done everything correctly, then running `/challenge/run` will print the flag to the terminal.
 
 #### Commands run: 
 
 ```sh
-$ 
+$ nano solve.sh
+```
+
+Enter the script:
+```sh
+#!/bin/bash
+if [ "$1" == "hack" ]
+then
+   echo "the planet"
+elif [ "$1" == "pwn" ]
+then
+    echo "college"
+elif [ "$1" == "learn" ]
+then
+    echo "linux"
+else
+    echo "unknown"
+fi
+```
+Then press `Ctrl+X`, Press `Y` when it asks if you want to save the modified buffer, And hit `Enter`.
+
+```sh
+$ chmod +x solve.sh
+$ /challenge/run
 ```
 
 ## Flag: 
 
 ```
-pwn.college{}
+pwn.college{sYYWHagZb5TomAPOWvifaL9p5ov.0FOzMDOxwSOxAzNzEzW}
 ```
 
 # Challenge 12: 
