@@ -419,24 +419,78 @@ $ /challenge/run
 pwn.college{Exqtp3c2SBhGTkN1O4Y_1PtfhQY.0VNzMDOxwSOxAzNzEzW}
 ```
 
-# Challenge 9: 
+# Challenge 9: Scripting with Conditionals
 
+Now that you can use arguments in scripts, let's make them smarter with conditional logic!
 
+In bash, you can use `if` statements to make decisions:
+
+```bash
+if [ "$1" == "ping" ]
+then
+    echo "pong"
+fi
+```
+
+The above, in English, is `if the first argument is "ping", print out "pong"`.
+The syntax is somewhat unforgiving for a few reasons.
+First, you _must_ have spaces after `if` (if you're used to a language like C, this is different), after `[`, and before `]`.
+Second, `if`, `then`, and `fi` must all be on different lines (or separated by semicolons); you can't lump them into the same statement.
+It's also a bit weird: instead of `endif` or `end` or something like that, the terminator of the `if` statement is `fi` (`if` backwards).
+Just something you have to remember.
+
+For this challenge, write a script at `/home/hacker/solve.sh` that:
+
+- Takes one argument
+- If the argument is "pwn", output "college"
+- For any other input, output nothing
+
+Example:
+
+```console
+hacker@dojo:~$ bash /home/hacker/solve.sh pwn
+college
+hacker@dojo:~$ bash /home/hacker/solve.sh foo
+hacker@dojo:~$
+```
+Once your script works correctly, run `/challenge/run` to get your flag!
+
+----
+**NOTE:**
+Interested in what else you can check in a condition, other than string equality?
+Read all about it with `help test`!
 
 ## Solution:
 
-
+In this challenge, we must make a shell script `solve.sh` in our home directory that takes one argument `$1` and then prints our `"college"` if it is equal to `"pwn"`. Then, must make it executable using `chmod` so that it can be run without invoking `bash`. If we have done everything correctly, then running `/challenge/run` will print the flag to the terminal.
 
 #### Commands run: 
 
 ```sh
-$ 
+$ nano solve.sh
+```
+
+Enter the script:
+```sh
+#!/bin/bash
+if [ "$1" == "pwn" ]
+then
+    echo "college"
+fi
+```
+Then press `Ctrl+X`, Press `Y` when it asks if you want to save the modified buffer, And hit `Enter`.
+
+```sh
+$ chmod +x solve.sh
+$ ./solve.sh pwn
+$ ./solve.sh abc
+$ /challenge/run
 ```
 
 ## Flag: 
 
 ```
-pwn.college{}
+pwn.college{gu08draGIW7KrV_phsin7M5JZ4w.0lNzMDOxwSOxAzNzEzW}
 ```
 
 # Challenge 10: 
