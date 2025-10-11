@@ -349,24 +349,74 @@ $ /challenge/run
 pwn.college{YMeaB2v-aVguLrjBTPUY8oX_7wE.0VOzMDOxwSOxAzNzEzW}
 ```
 
-# Challenge 8: 
+# Challenge 8: Scripting with Arguments
 
+You've learned how to make shell scripts, but so far they've just been lists of commands.
+Scripts become much more powerful when they can accept arguments!
+This might look like:
 
+```console
+hacker@dojo:~$ bash myscript.sh hello world
+```
+
+The script can access these arguments using special variables:
+- `$1` contains the first argument ("hello")
+- `$2` contains the second argument ("world")
+- `$3` would contain the third argument (if there had been one)
+- ...and so on
+
+Here's a simple example:
+```bash
+hacker@dojo:~$ cat myscript.sh
+#!/bin/bash
+echo "First argument: $1"
+echo "Second argument: $2"
+hacker@dojo:~$ bash myscript.sh hello world
+First argument: hello
+Second argument: world
+hacker@dojo:~$
+```
+
+For this challenge, you need to write a script at `/home/hacker/solve.sh` that:
+1. Takes two arguments
+2. Outputs them in REVERSE order (second argument first, then the first argument)
+
+For example:
+```console
+hacker@dojo:~$ bash /home/hacker/solve.sh pwn college
+college pwn
+hacker@dojo:~$
+```
+
+Once your script works correctly, run `/challenge/run` to get your flag!
 
 ## Solution:
 
-
+In this challenge, we must make a shell script `solve.sh` in our home directory that takes two arguments `$1` and `$2` and then prints them in reverse order. Then, must make it executable using `chmod` so that it can be run without invoking `bash`. If we have done everything correctly, then running `/challenge/run` will print the flag to the terminal.
 
 #### Commands run: 
 
 ```sh
-$ 
+$ nano solve.sh
+```
+
+Enter the script:
+```sh
+#!/bin/bash
+echo $2 $1
+```
+Then press `Ctrl+X`, Press `Y` when it asks if you want to save the modified buffer, And hit `Enter`.
+
+```sh
+$ chmod +x solve.sh
+$ ./solve.sh string1 string2
+$ /challenge/run
 ```
 
 ## Flag: 
 
 ```
-pwn.college{}
+pwn.college{Exqtp3c2SBhGTkN1O4Y_1PtfhQY.0VNzMDOxwSOxAzNzEzW}
 ```
 
 # Challenge 9: 
